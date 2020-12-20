@@ -1,0 +1,29 @@
+{% extends "index.html" %}
+{% block content %}
+<form method="POST">
+  {% csrf_token %}
+  <div id="login-box">
+    <div class="left">
+      <h1>Inscription</h1>
+      {% for message in messages %}
+      <div>
+        <h5 style="color: red;">{{message}}</h5>
+      </div>
+      {% endfor %}
+      <input type="text" name="email" autocomplete="false" placeholder="E-mail" />
+      <input type="text" name="first_name" autocomplete="false" placeholder="Nom">
+      <input type="text" name="name" autocomplete="false" placeholder="Prenom">
+      <input type="text" name="company_name" autocomplete="false" placeholder="Nom de la compagnie">
+
+    </div>
+
+    <div class="right">
+      <input type="text" name="phone" autocomplete="false" autocomplete="false" placeholder="Numéro de téléphone">
+      <input type="password" name="password1" placeholder="Mot de passe" />
+      <input type="password" name="password2" placeholder="Confirmer le mot de passe" />
+
+      <input type="submit" name="signup_submit" value="S'inscrire" />
+    </div>
+  </div>
+</form>
+{% endblock %}

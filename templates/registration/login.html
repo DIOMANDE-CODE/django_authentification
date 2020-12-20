@@ -1,0 +1,28 @@
+{% extends "index.html" %}
+{% block content %}
+<form method="POST" action="">
+    {% csrf_token %}
+    <div id="login-box">
+        <div class="left">
+          <h1>Connexion</h1>
+          {% for message in messages %}
+          <div>
+            <h5 style="color: red;">{{message}}</h5>
+          </div>
+          {% endfor %}
+          <input type="text" name="email" placeholder="E-mail" />
+          <input type="password" name="password" placeholder="Mot de passe" />
+          
+          <input type="submit" name="signup_submit" value="Se connecter" />
+        </div>
+        <div class="right">
+          <span class="loginwith">Sign in with<br />social network</span>
+          
+          <button class="social-signin facebook">Connect with facebook</button>
+          <button class="social-signin twitter">Connect with Twitter</button>
+          <button class="social-signin google">Connect with Google+</button>
+        </div>
+        <div class="or">OR</div>
+      </div>
+</form>
+{% endblock %}

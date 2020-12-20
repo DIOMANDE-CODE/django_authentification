@@ -1,0 +1,9 @@
+{% include 'index.html' %}
+{% block content %}
+    {% if user.is_authenticated %}
+    <p>Bienvenue sur la page d'administration</p>
+    <a href="{% url 'logout' %}"><span style="float: right;">Log out</span></a>
+    {% else %}
+    <a href="{% url 'login' %}"><h3>Se connecter</h3></a>
+    {% endif %}
+{% endblock %}
